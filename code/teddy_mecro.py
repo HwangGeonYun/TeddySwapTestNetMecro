@@ -13,8 +13,8 @@ TEDYt = 3
 HOSKYt = 4
 SELECt = 5
 name = ["ADA", "DJEDt", "IUSDt", "TEDYt", "HOSKYt"]
-select= ['select_ADA.png', 'select_DJEDt.png', 'select_IUSDt.png', 'select_TEDYt.png', 'select_HOSKYt.png']
-ft = ['ft_ADA.png', 'ft_DJEDt.png', 'ft_IUSDt.png', 'ft_TEDYt.png', 'ft_HOSKYt.png', 'ft_SELECt.png']
+select= ['screenshot\\select_ADA.png', 'screenshot\\select_DJEDt.png', 'screenshot\\select_IUSDt.png', 'screenshot\\select_TEDYt.png', 'screenshot\\select_HOSKYt.png']
+ft = ['screenshot\\ft_ADA.png', 'screenshot\\ft_DJEDt.png', 'screenshot\\ft_IUSDt.png', 'screenshot\\ft_TEDYt.png', 'screenshot\\ft_HOSKYt.png', 'screenshot\\ft_SELECt.png']
 
 from_ada_to = [DJEDt, IUSDt, TEDYt]
 from_djedt_to = [ADA, IUSDt]
@@ -117,8 +117,8 @@ while(True):
     
     #error가 나서 처음으로 돌아갈때 from에 숫자가 입력되어있어서 if문이 없으면
     #how_much_from이 None으로 초기화됨 
-    if(pag.locateCenterOnScreen('from.PNG', confidence=0.8)!=None):
-        how_much_from = pag.locateCenterOnScreen('from.PNG', confidence=0.8)
+    if(pag.locateCenterOnScreen('screenshot\\from.PNG', confidence=0.8)!=None):
+        how_much_from = pag.locateCenterOnScreen('screenshot\\from.PNG', confidence=0.8)
 
     pag.click(how_much_from)
 
@@ -135,7 +135,7 @@ while(True):
 
 
     #인출 최대치를 넘겼을때
-    while(pag.locateCenterOnScreen('insufficient.png', confidence =0.8)!=None):
+    while(pag.locateCenterOnScreen('screenshot\\insufficient.png', confidence =0.8)!=None):
         #print(1)
         pag.click(how_much_from)
         time.sleep(1)
@@ -147,16 +147,16 @@ while(True):
         
     time.sleep(2)
     
-    swap=pag.locateCenterOnScreen('swap.PNG', confidence=0.9)
+    swap=pag.locateCenterOnScreen('screenshot\\swap.PNG', confidence=0.9)
     pag.click(swap)
     time.sleep(2)
-    cs=pag.locateCenterOnScreen('confirmswap.PNG', confidence=0.9)
+    cs=pag.locateCenterOnScreen('screenshot\\confirmswap.PNG', confidence=0.9)
     pag.click(cs)
     time.sleep(5)
     
     #거래 빠꾸날때 매꾸는 용도
-    if(pag.locateCenterOnScreen('error.png', confidence=0.8)):
-        trivial = pag.locateCenterOnScreen('trivial.png', confidence=0.8)
+    if(pag.locateCenterOnScreen('screenshot\\error.png', confidence=0.8)):
+        trivial = pag.locateCenterOnScreen('screenshot\\trivial.png', confidence=0.8)
         pag.click(trivial)
         pag.click(how_much_from)
         pag.hotkey("ctrl", "a")
@@ -171,10 +171,10 @@ while(True):
     pag.hotkey("ctrl","v")
         
 
-    sign=pag.locateCenterOnScreen('sign.png', confidence=0.9)
+    sign=pag.locateCenterOnScreen('screenshot\\sign.png', confidence=0.9)
     pag.click(sign)
     time.sleep(5)
-    ex=pag.locateCenterOnScreen('ex.png', confidence=0.5)
+    ex=pag.locateCenterOnScreen('screenshot\\ex.png', confidence=0.5)
     pag.click(ex)
     time.sleep(3) 
 
